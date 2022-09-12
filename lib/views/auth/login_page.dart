@@ -58,6 +58,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     elevation: MaterialStateProperty.all(0.0)),
                 onPressed: () {
                   formKey.currentState!.save();
+                  Navigator.pushNamed(context, '/verify');
                 },
                 child: const Text('Continue'),
               ),
