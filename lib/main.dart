@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pos/theme/custome_theme.dart';
 import 'package:pos/views/auth/login_page.dart';
+import 'package:pos/views/auth/verify.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -17,7 +18,11 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: CustomeTheme.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: const LoginPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const LoginPage(),
+        '/verify': (context) => const VerifyPage(),
+      },
     );
   }
 }
