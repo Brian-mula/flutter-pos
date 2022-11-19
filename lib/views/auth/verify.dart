@@ -20,8 +20,6 @@ class _VerifyPageState extends ConsumerState<VerifyPage> {
             const Center(
                 child: CustomeText(
               text: "Verification",
-              size: 20,
-              color: Colors.black87,
             )),
             Container(
               padding: const EdgeInsets.only(top: 10, bottom: 10),
