@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pos/Homepage.dart';
 import 'package:pos/theme/custome_theme.dart';
-import 'package:pos/views/auth/login_page.dart';
 import 'package:pos/views/auth/verify.dart';
 
 void main() {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => const LoginPage(),
+        '/': (context) => const Homepage(),
         '/verify': (context) => const VerifyPage(),
       },
     );
