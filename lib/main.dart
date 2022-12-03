@@ -5,6 +5,8 @@ import 'package:pos/Homepage.dart';
 import 'package:pos/firebase_options.dart';
 import 'package:pos/theme/custome_theme.dart';
 import 'package:pos/views/auth/verify.dart';
+import 'package:pos/views/auth_checker.dart';
+import 'package:pos/views/landing_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +28,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomePage(),
+        '/': (context) => const AuthChecker(),
+        '/landing': (context) => const LandingPage(),
+        '/home': (context) => const HomePage(),
         '/verify': (context) => const VerifyPage(),
       },
     );
