@@ -12,11 +12,24 @@ class LandingPage extends ConsumerStatefulWidget {
 class _LandingPageState extends ConsumerState<LandingPage> {
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue.shade600,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/home');
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              size: 35,
+            )),
         centerTitle: true,
         elevation: 0.0,
-        title: const CustomeText(text: "This is the Landing page"),
+        title: CustomeText(
+          text: "Products",
+          textStyle: theme.textTheme.headline6!.copyWith(color: Colors.white),
+        ),
       ),
     );
   }
