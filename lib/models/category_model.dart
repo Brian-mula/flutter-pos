@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class ProductModel {
+class CategoryModel {
   String? id;
   String title;
 
-  ProductModel({
+  CategoryModel({
     this.id,
     required this.title,
   });
@@ -17,12 +17,12 @@ class ProductModel {
     };
   }
 
-  ProductModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> doc)
+  CategoryModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> doc)
       : id = doc.id,
         title = doc.data()!["title"];
 
   String toJson() => json.encode(toSnapshot());
 
-  factory ProductModel.fromJson(String source) =>
-      ProductModel.fromSnapshot(json.decode(source));
+  factory CategoryModel.fromJson(String source) =>
+      CategoryModel.fromSnapshot(json.decode(source));
 }
