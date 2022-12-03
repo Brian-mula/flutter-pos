@@ -106,6 +106,12 @@ class _HomePageState extends ConsumerState<HomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  CustomeText(
+                      text:
+                          "We sent a verification code to ${phoneController.text}"),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   const Pinput(
                     length: 6,
                   ),
