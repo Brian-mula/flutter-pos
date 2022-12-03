@@ -55,15 +55,21 @@ class _HomePageState extends ConsumerState<HomePage> {
             FirebaseAuth auth = FirebaseAuth.instance;
             await auth.verifyPhoneNumber(
               phoneNumber: countryCode! + phoneController.text,
-              verificationCompleted: (PhoneAuthCredential credential) {},
-              verificationFailed: (FirebaseAuthException e) {},
-              codeSent: (String verificationId, int? resendToken) {
+              verificationCompleted: (PhoneAuthCredential credential) async {},
+              verificationFailed: (FirebaseAuthException e) async {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text(
+                  'error: ${e.message}',
+                  style: Theme.of(context).textTheme.bodyText1,
+                )));
+              },
+              codeSent: (String verificationId, int? resendToken) async {
                 setState(() {
                   isPhone = false;
                   this.verificationId = verificationId;
                 });
               },
-              codeAutoRetrievalTimeout: (String verificationId) {},
+              codeAutoRetrievalTimeout: (String verificationId) async {},
             );
           }),
       body: isPhone
