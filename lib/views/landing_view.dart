@@ -35,7 +35,7 @@ class _LandingPageState extends ConsumerState<LandingPage> {
         actions: [
           IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, "new-product");
+                Navigator.pushNamed(context, "/new-product");
               },
               icon: const Icon(
                 Icons.add,
