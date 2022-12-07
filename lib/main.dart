@@ -7,6 +7,7 @@ import 'package:pos/theme/custome_theme.dart';
 import 'package:pos/views/auth/verify.dart';
 import 'package:pos/views/auth_checker.dart';
 import 'package:pos/views/landing_view.dart';
+import 'package:pos/views/new_product.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         '/landing': (context) => const LandingPage(),
         '/home': (context) => const HomePage(),
         '/verify': (context) => const VerifyPage(),
+        '/new-product': (context) => const NewProduct()
       },
     );
   }

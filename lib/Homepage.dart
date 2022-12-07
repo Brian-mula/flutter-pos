@@ -25,7 +25,11 @@ class _HomePageState extends ConsumerState<HomePage> {
     try {
       await FirebaseAuth.instance.signInWithCredential(credential);
     } on FirebaseAuthException catch (e) {
-      print(e.toString());
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+        'error: ${e.message}',
+        style: Theme.of(context).textTheme.bodyText1,
+      )));
     }
   }
 
